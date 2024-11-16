@@ -1,0 +1,295 @@
+
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+  <!-- Start intro section -->
+  <section id="intro" class="section-intro">
+    <div class="overlay">
+      <div class="container">
+        <div class="main-text">
+          <h1 class="intro-title">Welcome <span style="color: #3498DB"> {{ student_name }} </span></h1>
+          <p class="sub-title">Please Check Your Semester Exam Results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end intro section -->
+
+  <div class="wrapper">
+    <!-- Categories Homepage Section Start -->
+    <section id="categories-homepage">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">Your Results In Semesters</h3>
+          </div>
+
+
+          {% for semester, marks in mark_list.items %}
+
+          <div class="col-md-12 col-sm-6 col-xs-12">
+            <div class="category-box border-1 wow fadeInUpQuick" data-wow-delay="0.3s">
+              <div class="category-header">
+                <a href="category.html">
+                  <h4>{{ semester }} </h4>
+                </a>
+              </div>
+              <div class="category-content">
+                <ul>
+                 
+                  {% for mark in marks %}
+                 
+                  <li>
+                    <a href="">{{ mark.subject }}</a>
+                    <sapn class="category-counter">{{ mark.marks_obtained }}</sapn>
+                    <sapn class="category-counter">{{ mark.grade }}</sapn>
+                  </li>
+                  
+                  {% endfor %}
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+        {% endfor %}
+
+          
+
+
+        </div>
+      </div>
+    </section>
+    <!-- Categories Homepage Section End -->
+
+    
+
+    <!-- Start Services Section -->
+    <div class="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <div class="features-box wow fadeInDownQuick" data-wow-delay="0.3s">
+              <div class="features-icon">
+                <i class="fa fa-book">
+                </i>
+              </div>
+              <div class="features-content">
+                <h4>
+                  Full Documented
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum
+                  assumenda facere.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="features-box wow fadeInDownQuick" data-wow-delay="0.6s">
+              <div class="features-icon">
+                <i class="fa fa-paper-plane"></i>
+              </div>
+              <div class="features-content">
+                <h4>
+                  Clean & Modern Design
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum
+                  assumenda facere.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="features-box wow fadeInDownQuick" data-wow-delay="0.9s">
+              <div class="features-icon">
+                <i class="fa fa-map"></i>
+              </div>
+              <div class="features-content">
+                <h4>
+                  Great Features
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum
+                  assumenda facere.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="features-box wow fadeInDownQuick" data-wow-delay="1.2s">
+              <div class="features-icon">
+                <i class="fa fa-cogs"></i>
+              </div>
+              <div class="features-content">
+                <h4>
+                  Completely Customizable
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum
+                  assumenda facere.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="features-box wow fadeInDownQuick" data-wow-delay="1.5s">
+              <div class="features-icon">
+                <i class="fa fa-hourglass"></i>
+              </div>
+              <div class="features-content">
+                <h4>
+                  100% Responsive Layout
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum
+                  assumenda facere.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="features-box wow fadeInDownQuick" data-wow-delay="1.8s">
+              <div class="features-icon">
+                <i class="fa fa-hashtag"></i>
+              </div>
+              <div class="features-content">
+                <h4>
+                  User Friendly
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum
+                  assumenda facere.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="features-box wow fadeInDownQuick" data-wow-delay="2.1s">
+              <div class="features-icon">
+                <i class="fa fa-newspaper-o"></i>
+              </div>
+              <div class="features-content">
+                <h4>
+                  Awesome Layout
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum
+                  assumenda facere.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="features-box wow fadeInDownQuick" data-wow-delay="2.4s">
+              <div class="features-icon">
+                <i class="fa fa-leaf"></i>
+              </div>
+              <div class="features-content">
+                <h4>
+                  High Quality
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum
+                  assumenda facere.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="features-box wow fadeInDownQuick" data-wow-delay="2.7s">
+              <div class="features-icon">
+                <i class="fa fa-google"></i>
+              </div>
+              <div class="features-content">
+                <h4>
+                  Free Google Fonts Use
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum
+                  assumenda facere.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Services Section -->
+
+    <!-- Location Section Start -->
+    <section class="location">
+      <div class="container">
+      </div>
+    </section>
+    <!-- Location Section End -->
+  </div>
+
+  <!-- Counter Section Start -->
+  <section id="counter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="counting wow fadeInDownQuick" data-wow-delay=".5s">
+            <div class="icon">
+              <span>
+                <i class="lnr lnr-tag"></i>
+              </span>
+            </div>
+            <div class="desc">
+              <h3 class="counter"> {{ no_of_semesters }} </h3>
+              <p>Semesters</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="counting wow fadeInDownQuick" data-wow-delay="1s">
+            <div class="icon">
+              <span>
+                <i class="lnr lnr-map"></i>
+              </span>
+            </div>
+            <div class="desc">
+              <h3 class="counter">{{ no_of_subjects}}</h3>
+              <p>Subjects</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="counting wow fadeInDownQuick" data-wow-delay="1.5s">
+            <div class="icon">
+              <span>
+                <i class="lnr lnr-users"></i>
+              </span>
+            </div>
+            <div class="desc">
+              <h3 class="counter">{{ no_of_students}}</h3>
+              <p>Students</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="counting wow fadeInDownQuick" data-wow-delay="2s">
+            <div class="icon">
+              <span>
+                <i class="lnr lnr-license"></i>
+              </span>
+            </div>
+            <div class="desc">
+              <h3 class="counter">{{ no_of_teachers }}</h3>
+              <p>Teachers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Counter Section End -->
+
+  {% endblock content %}

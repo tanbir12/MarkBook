@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+
+{% block content %}
+
+<div class="page-header" style="background: url({% static "assets/img/banner1.jpg" %} );">
+    <div class="container">
+      <div class="row">         
+        <div class="col-md-12">
+          <div class="breadcrumb-wrapper">
+            <h2 class="page-title">Add a Teacher</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Header End --> 
+
+  <!-- Content section Start --> 
+  <section id="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+          <div class="page-login-form box">
+            <h3 style='margin-bottom:-15px !important;'>
+              Teacher Form
+            </h3>
+            <p style='margin-bottom:8px !important;'><span style='color:red; font-weight:800;'>ALERT : </span>Please Carefully Enter Details</p>
+            <form role="form" class="login-form" method='POST'>
+              {% csrf_token %}
+              <div class="form-group">
+                <div class="input-icon">
+                  <i class="icon fa fa-user"></i>
+                  {% render_field  form.first_name class='form-control' placeholder='First Name' required=True %}
+
+                </div>
+              </div> 
+              <div class="form-group">
+                <div class="input-icon">
+                  <i class="icon fa fa-id-badge"></i>
+                  {% render_field  form.last_name class='form-control' placeholder='Last Name' required=True %}
+                </div>
+              </div> 
+              <div class="form-group">
+                <div class="input-icon">
+                  <i class="icon fa fa-user-circle"></i>
+                  {% render_field  form.username class='form-control' placeholder='@user_name' required=True %}
+                </div>
+              </div>      
+              <div class="form-group">
+                <div class="input-icon">
+                  <i class="icon fa fa-envelope"></i>
+                  {% render_field  form.email class='form-control' placeholder='Email' required=True %}
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-icon">
+                  <i class="icon fa fa-unlock-alt"></i>
+                  {% render_field  form.password class='form-control' placeholder='Password' required=True %}
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-icon">
+                  <i class="icon fa fa-unlock"></i>
+                  {% render_field  form.password_confirm class='form-control' placeholder='Password-Confirm' required=True %}
+                </div>
+              </div>  
+              <button class="btn btn-common log-btn">Add Teacher</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Content section End --> 
+
+    {% if form.errors %}
+    <ul class="error-list">
+        {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+            <div class="alert alert-danger" role="alert">
+                {{error}}
+              </div>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+  {% for msg in messages %}
+    <div class="alert alert-{{ msg.tags }} " role="alert">
+        {{ msg }}
+    </div>
+  {% endfor %}
+
+  <div class="features">
+    <div class="container">
+    </div>
+  </div>
+  <br><br><br>
+  <!-- End Services Section -->
+
+</div>
+
+{% endblock content %}

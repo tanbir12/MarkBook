@@ -1,0 +1,279 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content  %}
+
+      <!-- Hero Area Start -->
+      <div id="hero-area">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-12 col-xs-12 text-center">
+              <div class="contents">
+                <h1 class="intro-title" >Welcome <span style="color: #3498DB">{{ admin.first_name }}</span></h1>
+                <br><p>"A good teacher is like a candle—it consumes itself to light the way for others."</p>
+
+                <form  method="post" action="{% url 'logout' %}"  style="margin-top: 50px;" >
+                  {% csrf_token %}
+                  <button class="btn btn-danger " type="submit">Logout</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Area End -->
+    </div>
+    <!-- Header Section End -->
+
+    {% comment %}  TEACHER SUBJECT RELATION  {% endcomment %} 
+
+    <div class="container">
+      <div class="row">
+        <div style=" margin-top: 2vh;display: flex;flex-direction: column ;align-items: center; justify-content: center;">
+          <ul class="list-group" style="width: auto; text-align: center;" >
+            <li class="list-group-item active" aria-current="true">Your Subjects</li>
+            {% for sub in subjects %}
+            <li class="list-group-item">{{sub}}</li>
+            {% endfor %}
+          </ul>
+          <a class="btn btn-primary" href="{% url 'manage_subjects' %}" role="button">Manage Subjects</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="wrapper">      
+      <section class="grid-category">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="box-title no-border">
+                <div class="inner">
+                  <h3 class="section-title"><span>Student </span> Pannel</h3>   
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">              
+              <div class="col-md-2 col-sm-3 col-xs-6 f-category wow fadeIn" data-wow-delay="0.2s">
+                <a href="">
+                  <div class="icon">
+                    <i class="fa fa-graduation-cap"></i>
+                  </div>
+                  <h6>Pending</h6> 
+                </a>
+              </div>
+              <div class="col-md-2 col-sm-3 col-xs-6 f-category wow fadeIn" data-wow-delay="0.4s">
+                <a href="">
+                  <div class="icon">
+                    <i class="fa fa-book"></i>
+                  </div>
+                  <h6>Pending</h6> 
+                </a>
+              </div>
+              <div class="col-md-2 col-sm-3 col-xs-6 f-category wow fadeIn" data-wow-delay="0s">
+                <a href="{%  url 'add-student' %}">
+                  <div class="icon">
+                    <i class="fa fa-graduation-cap"></i>
+                  </div>
+                  <h6>Add Students</h6> 
+                </a>
+              </div>
+              <div class="col-md-2 col-sm-3 col-xs-6 f-category wow fadeIn" data-wow-delay="0.6s">
+                <a href="">
+                  <div class="icon">
+                    <i class="fa fa-book"></i>
+                  </div>
+                  <h6>Pending</h6> 
+                </a>
+              </div>
+              <div class="col-md-2 col-sm-3 col-xs-6 f-category wow fadeIn" data-wow-delay="0.8s">
+                <a href="">
+                  <div class="icon">
+                    <i class="fa fa-tv"></i>
+                  </div>
+                  <h6>Pending</h6> 
+                </a>
+              </div>
+              <div class="col-md-2 col-sm-3 col-xs-6 f-category wow fadeIn" data-wow-delay="1s">
+                <a href="">
+                  <div class="icon">
+                    <i class="fa fa-graduation-cap"></i>
+                  </div> 
+                  <h6>Pending</h6> 
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+ 
+
+
+
+    
+    <!-- Start Services Section -->
+    {% include "service.html" %}
+ 
+
+      <!-- Add Marks Form -->
+      <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-4 col-md-4 col-md-offset-4">
+                    <div class="page-login-form box">
+                        <h3>
+                            Marks To Batch.
+                        </h3>
+                        <form role="form" class="login-form" method="POST" style="padding: 30px 10px !important;">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="icon fa fa-calendar"></i>
+                                    <input type="text" name="course_year" class="form-control" placeholder="Enter Joining Year" required>
+                                </div>
+                            </div>
+    
+                            <!-- CheckBox   -->
+                            
+                            {% for sub in subjects %}
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="RadioOptions" id="inlineRadio1"
+                                  value="{{sub.subject_id}}" required>
+                              <label class="form-check-label" for="inlineRadio1" style="font-weight: 200;">{{sub}}</label>
+                            </div>
+                            {% endfor %}
+  
+  
+    
+                            <button type="submit" class="btn btn-common log-btn"
+                                style="background-color: rgba(48, 146, 226, 0.815) !important; margin-top: 22px !important;">Submit</button>
+                        </form>
+    
+                        {% for msg in messages %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ msg }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content section End -->
+  
+  
+
+
+
+
+ 
+    <!-- Start Counter Section -->
+    {% include "counter.html" %}
+
+
+
+
+    <!-- Pricing Table Section -->
+    <section id="pricing-table" class="section">
+      <div class="container">
+        <div class="row">
+            <h2 class="section-title">Edit Admin Database</h2>
+          <div class="col-sm-4 wow fadeInDownQuick" data-wow-delay="0s">
+            <div class="table wow">
+              <div class="title">
+                <h3>Check List</h3>
+              </div>
+              <div class="pricing-header">
+                <p class="price-value" style='margin-bottom:10px !important;'><i class="fa fa-user-o" aria-hidden="true"></i></p>
+                <p class="price-quality" >View All Admins</p>
+             </div>
+              <ul class="description">
+                <li><i class="fa fa-check-square"></i>Admin ID</li>
+                <li><i class="fa fa-times-circle-o"></i>First Name of Admin</li>
+                <li><i class="fa fa-times-circle-o"></i>Last Name of Admin</li>
+              </ul>
+              <button class="btn btn-common" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">See All</button>
+            </div> 
+          </div>
+
+
+          <!-- POPUP FOR SHOWING TEACHERS LIST -->
+          <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <ul class="list-group">
+                  <li class="list-group-item active">TEACHERS AND ID's</li>
+                  {% for teacher in teachers %}
+                  <li class="list-group-item"> <span style="background-color: #d3d3d3; padding: 1px 5px;">{{teacher.id}}</span> :- {{teacher.first_name}} {{teacher.last_name}}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-sm-4 wow fadeInDownQuick" data-wow-delay="0.5s">
+            <div class="table" id="active-tb">
+              <div class="title">
+                <h3>Add</h3>
+              </div>
+               <div class="pricing-header">
+                  <p class="price-value" style='margin-bottom:10px !important;'><i class="fa fa-user-o" aria-hidden="true"></i></p>
+                  <p class="price-quality" >Create An Admin</p>
+               </div>
+              <ul class="description">
+                <li><i class="fa fa-check-square"></i>First Name</li>
+                <li><i class="fa fa-check-square"></i>Last Name</li>
+                <li><i class="fa fa-check-square"></i>Email</li>
+                <li><i class="fa fa-check-square"></i>Password</li>
+              </ul>
+              <a href='{% url "add_teacher" %}' class="btn btn-common">Create Now</a>
+           </div> 
+          </div>
+          
+          <div class="col-sm-4 wow fadeInDownQuick" data-wow-delay="0.8s">
+            <div class="table">
+              <div class="title">
+                <h3>Remove</h3>
+              </div>
+               <div class="pricing-header">
+                <p class="price-value" style='margin-bottom:10px !important;'><i class="fa fa-user-o" aria-hidden="true"></i></p>
+                <p class="price-quality" >Delete An Admin</p>
+               </div>
+              <ul class="description">
+                <li><i class="fa fa-check-square"></i>Any Admin Can Remove.</li>
+                <li><i class="fa fa-check-square"></i>No Need Permissions.</li>
+                <li><i class="fa fa-check-square"></i>Only ID Need.</li>
+              </ul>
+              <a href='{% url "delete_teacher" %}' class="btn btn-common" style="background-color: rgba(226, 48, 48, 0.815) !important;">Remove Now</a>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pricing Table Section End -->   
+
+    <!-- App Section Start -->
+    <section class="app">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-sm-12 col-xs-12">
+            <div class="app-inner wow fadeInLeft" data-wow-delay="0.5s">
+              <h2>Get Free Mobile App from AppStore and GooglePlay</h2>
+              <div class="description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta vel, commodi   laudantium officiis ipsum est aliquid dolore omnis, facilis molestiae dicta ipsam aperiam corporis minima mollitia iusto voluptatibus asperiores nemo.</p>
+              </div>
+              <button class="btn btn-common btn-lg"><i class="fa fa-apple"></i> App Store</button>
+              <button class="btn btn-danger btn-lg"><i class="fa fa-play"></i> Google Play</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- app Section End -->
+
+
+{% endblock content  %}

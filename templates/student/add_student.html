@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{%load widget_tweaks %}
+
+{% block content %}
+
+    <!-- Page Header Start -->
+    <div class="page-header" style="background: url({% static "assets/img/banner1.jpg" %} );">
+      <div class="container">
+        <div class="row">         
+          <div class="col-md-12">
+            <div class="breadcrumb-wrapper">
+              <h2 class="page-title">Add a Student</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page Header End --> 
+
+    <!-- Content section Start --> 
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <div class="page-login-form box">
+              <h3>
+                Enter Details
+              </h3>
+              <form role="form" class="login-form" method='POST'>
+                {% csrf_token %}
+                <div class="form-group">
+                  <div class="input-icon">
+                    <i class="icon fa fa-user"></i>
+                    {% render_field  form.student_name class='form-control' placeholder='Student Name' required=True %}
+
+                  </div>
+                </div> 
+                <div class="form-group">
+                  <div class="input-icon">
+                    <i class="icon fa fa-id-badge"></i>
+                    {% render_field  form.roll_no class='form-control' placeholder='Roll Number' required=True %}
+                  </div>
+                </div> 
+                <div class="form-group">
+                  <div class="input-icon">
+                    <i class="icon fa fa-calendar"></i>
+                    {% render_field  form.course_year class='form-control' placeholder='Year of Join' required=True %}
+                  </div>
+                </div>        
+                <button class="btn btn-common log-btn">Add Student</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Content section End --> 
+
+    {% for msg in messages %}
+      <div class="alert alert-{{ msg.tags }} " role="alert">
+          {{ msg }}
+      </div>
+    {% endfor %}
+
+    <div class="features">
+      <div class="container">
+      </div>
+    </div>
+    <br><br><br>
+    <!-- End Services Section -->
+
+  </div>
+    {% endblock content %}
