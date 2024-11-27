@@ -1,1 +1,1 @@
-web: gunicorn MCA.wsgi
+web: gunicorn MCA.wsgi:application
