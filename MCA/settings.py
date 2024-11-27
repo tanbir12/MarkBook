@@ -1,4 +1,5 @@
 from pathlib import Path
+import dj_database_url
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -10,9 +11,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,"templates")
 SECRET_KEY = 'mgr64jyvk1_m$)c=r*ngn3+2o@=0jc+#2+5ez^(r*ta^*z2c*r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['markbook.onrender.com']
 
 
 
@@ -72,16 +73,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'MCA_DATABASE', 
-        'USER': 'postgres',
-        'PASSWORD': '9658',
-        'HOST': 'localhost',
-        'PORT': '5432'
-    }
-
+    'default': dj_database_url.parse(os.getenv("DATABASE_URL"))
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'MCA_DATABASE', 
+#         'USER': 'postgres',
+#         'PASSWORD': '9658',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+
+# }
 
 
 # Password validation

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -10,3 +10,6 @@ urlpatterns = [
     path('accounts/',include("django.contrib.auth.urls"),name='admin'),
     path('accounts/',include('teacher.urls'),name='admin'),
 ]
+
+
+urlpatterns += staticfiles_urlpatterns()
