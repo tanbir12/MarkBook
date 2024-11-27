@@ -13,7 +13,8 @@ SECRET_KEY = 'mgr64jyvk1_m$)c=r*ngn3+2o@=0jc+#2+5ez^(r*ta^*z2c*r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['markbook.onrender.com']
+ALLOWED_HOSTS = ['markbook-n6wi.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 
