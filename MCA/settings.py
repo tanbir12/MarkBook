@@ -73,7 +73,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv("DATABASE_URL"))
+    'default': dj_database_url.parse("postgresql://mca_database_user:xE011QcbT43O8HX0i9735kh8ox6voEmq@dpg-ct3onoe8ii6s73d8c6b0-a.oregon-postgres.render.com/mca_database")
 }
 
 
@@ -128,3 +128,24 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static")
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'ERROR',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
