@@ -770,6 +770,9 @@ nav#menu span.fa.fa-bars:hover {
   .main-navigation .navbar-nav>li a {
     padding: 12px 0px !important;
   }
+  #content{
+    padding: 20px 0px !important;
+  }
 }
 
 /* ==========================================================================
@@ -1156,7 +1159,7 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 #search-row-wrapper {
-  background: url("../img/bg/counter-bg.jpg") center center no-repeat;
+  background: url("../img/bg/counter-bg.jpg") ;
   background-size: cover;
   color: #fff;
   text-align: center;
@@ -1447,7 +1450,6 @@ select>opation:focus {
    Service Box
    ========================================================================== */
 .features {
-  background: url("../img/bg/bg.jpg") center center no-repeat;
   padding: 60px 0;
   margin: 30px 0;
 }
@@ -1654,43 +1656,11 @@ select>opation:focus {
   line-height: 32px;
 }
 
-/* ==========================================================================
-   Locations Styles
-   ========================================================================== */
-.location {
-  margin-top: 50px;
-}
-
-.localtion-list {
-  border: 1px solid #EEE;
-  padding: 15px;
-  box-shadow: 1px 1px 3px 0px #F1F1F1;
-}
-
-.localtion-list .cat-list {
-  margin: 0;
-  padding: 0;
-}
-
-.localtion-list .cat-list li {
-  line-height: 24px;
-}
-
-.localtion-list .cat-list li a {
-  font-size: 13px;
-  color: #888;
-}
-
-.localtion-list .cat-list li a:hover {
-  color: #3498db;
-  margin-left: 5px;
-}
 
 /* ==========================================================================
     Counter Style
     ========================================================================== */
 #counter {
-  background: url("../img/bg/counter-bg.jpg") center center no-repeat;
   background-size: cover;
   color: #fff;
   padding: 60px 0;
@@ -1729,11 +1699,12 @@ select>opation:focus {
 
 .counting .desc h3 {
   font-size: 24px;
-  color: #fff;
+  color: black;
 }
 
 .counting .desc p {
   font-size: 16px;
+  color: black;
 }
 
 .counting:hover span {
@@ -1745,30 +1716,6 @@ select>opation:focus {
   transform: scale(1.1, 1.1);
 }
 
-/* ==========================================================================
-   Newsletter Style
-   ========================================================================== */
-.newletter {
-  background: #fff;
-}
-
-.main-heading h4 {
-  color: #444;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-}
-
-.subscribe {
-  margin-top: 40px;
-  width: 100%;
-}
-
-.subscribe .form-control {
-  float: left;
-  width: 75%;
-  height: 52px;
-  margin-right: 5px;
-}
 
 /* ==========================================================================
    Footer Style

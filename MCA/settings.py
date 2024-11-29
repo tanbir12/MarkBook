@@ -15,9 +15,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['markbook-n6wi.onrender.com', 'localhost', '127.0.0.1']
 
-
-
-
 LOGOUT_REDIRECT_URL = 'Indexpage'
 
 

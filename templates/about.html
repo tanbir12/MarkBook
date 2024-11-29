@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+
+
+  <!-- Page Header Start -->
+     
+  <div class="page-header" style="background: url({% static "assets/img/banner1.jpg" %});">
+    <div class="container">
+      <div class="row">         
+        <div class="col-md-12">
+          <div class="breadcrumb-wrapper">
+            <h2 class="page-title" style="text-transform:none !important ;"> About
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Header End --> 
+
+
+
+
+
+<!-- Main container Start -->
+<div class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="ad-detail-content">
+          <p>This website has been developed as a minor project for college, aimed at streamlining the process of
+            managing and accessing student marks. The platform is designed to serve two primary user roles: Students and
+            Teachers.</p>
+          <blockquote>
+            <h2 style="color: #007bff; margin-bottom: 10px; font-size: 20px;">Key Features and Functionalities</h2>
+
+            <h3 style="color: #494949; margin-bottom: 8px; font-size: 18px;">For Students :</h3>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+              <li style="margin: 8px 0; font-size: 14px;"><strong>Accessing Marks : </strong> Students can view their
+                marks by entering
+                their roll number securely.</li>
+              <li style="margin: 8px 0;font-size: 14px;"><strong>Data Privacy : </strong> Each student can only view
+                their own academic
+                records.</li>
+            </ul>
+
+
+            <h3 style="color: #333; margin-bottom: 8px; font-size: 18px;">For Teachers :</h3>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+              <li style="margin: 8px 0; font-size: 14px;"><strong>Registration and Login :</strong> Teachers can
+                register and log in with
+                secure credentials.</li>
+              <li style="margin: 8px 0;font-size: 14px;"><strong>Subject Management :</strong> Teachers can add or
+                remove subjects and
+                select the ones they teach.</li>
+              <li style="margin: 8px 0;font-size: 14px;"><strong>Batch-Wise Marks Allocation :</strong> Teachers can
+                assign marks to
+                students in batches for specific subjects.</li>
+              <li style="margin: 8px 0;font-size: 14px;"><strong>Student Management :</strong> Add or remove students to
+                keep the records
+                up-to-date.</li>
+              <li style="margin: 8px 0;font-size: 14px;"><strong>Role Management :</strong> Admin teachers can manage
+                other teachers by
+                assigning or revoking admin privileges.</li>
+            </ul>
+
+          </blockquote>
+          <p>..... and many more features are yet to be implemented.</p>
+
+          <p>This platform addresses common challenges in educational institutions by digitizing marks management.
+            It eliminates manual errors, saves time, and ensures data privacy and security. The intuitive design and
+            comprehensive features make it a reliable and scalable solution for academic purposes.</p>
+          <blockquote>
+            <h2 style="color: #007bff; margin-bottom: 10px;font-size: 18px;">Technologies Used</h2>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+              <li style="margin: 8px 0;font-size: 14px;"><strong>Frontend :</strong> HTML, CSS, JavaScript, and Bootstrap for a
+                responsive and visually appealing interface.</li>
+              <li style="margin: 8px 0;font-size: 14px;"><strong>Backend :</strong> Django framework for efficient request handling and
+                user authentication.</li>
+              <li style="margin: 8px 0;font-size: 14px;"><strong>Database :</strong> PostgreSQL for secure and robust data storage.</li>
+            </ul>
+          </blockquote>
+          <p> It features a robust and user-friendly interface built with HTML, CSS, JavaScript, and Bootstrap for the frontend, while the backend is powered by Django and the database operations are handled using PostgreSQL.</p>
+        </div>
+      </div>
+      <div class="col-sm-4 page-sidebar">
+        <aside>
+          <div class="inner-box">
+            <div class="categories">
+              <div class="widget-title">
+                <i class="fa fa-align-justify"></i>
+                <h4>All Pages</h4>
+              </div>
+              <div class="categories-list">
+                <ul>
+                  <li>
+                    <a href="{% url "Indexpage" %}">
+                      <i class="fa fa-home"></i>
+                      Home </span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url "Aboutpage" %}">
+                      <i class="fa fa-info-circle"></i>
+                      About </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url "Contactpage" %}">
+                      <i class="fa fa-phone"></i>
+                      Contact Us </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url "login" %}">
+                      <i class="fa fa-user"></i>
+                      Admin Login </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url "profile_page" %}">
+                      <i class="fa fa-address-book"></i>
+                      Profile Page </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url "add-student" %}">
+                      <i class="fa fa-graduation-cap"></i>
+                      Add Student </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url "add_teacher" %}">
+                      <i class="fa fa-user-plus"></i>
+                      Add Teacher </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="inner-box" style="background-color: #eee;">
+            <div class="widget-title">
+              <h4>Developer</h4>
+            </div>
+            <a href="https://www.linkedin.com/in/tanbir-pradhan/">
+            <div class="advimg" style="display: flex; flex-direction: column; align-items: center;justify-content: center;">
+              <img alt="" src="{% static "assets/img/tanbir.jpg" %}" style="width: 73%; border: 1px solid #444444; border-radius: 5%; margin: 10px;">
+              <h2 style="color: #444444; margin: 10px;font-size: 18px;">Tanbir Pradhan</h2>
+            </div>
+            </a>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Main container End -->
+
+
+
+
+
+
+
+{% endblock content %}

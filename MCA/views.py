@@ -52,3 +52,17 @@ def markPage(request,roll_no):
         'mark_list': mark_list,
     }
     return render(request,'student-marks.html',context)
+
+
+
+
+
+
+def aboutPage(request):
+    return render(request,'about.html')
+
+
+
+
+def contactPage(request):
+    return render(request,'contact.html')
