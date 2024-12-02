@@ -231,12 +231,16 @@ def add_marks_view(request, year, subject_id, teacher_id):
 # function for  calculating grade based on marks
 def calculate_grade(marks_obtained):
     if marks_obtained >= 90:
-        return 'A'
+        return 'O'
     elif marks_obtained >= 80:
-        return 'B'
+        return 'A+'
     elif marks_obtained >= 70:
-        return 'C'
+        return 'A'
     elif marks_obtained >= 60:
-        return 'D'
+        return 'B+'
+    elif marks_obtained >= 50:
+        return 'B'
+    elif marks_obtained >= 40:
+        return 'C'
     else:
-        return 'F'
+        return 'D'
