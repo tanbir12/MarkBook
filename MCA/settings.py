@@ -72,22 +72,22 @@ WSGI_APPLICATION = 'MCA.wsgi.application'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# DATABASES = {
-#     'default': dj_database_url.parse("postgresql://mca_database_user:xE011QcbT43O8HX0i9735kh8ox6voEmq@dpg-ct3onoe8ii6s73d8c6b0-a.oregon-postgres.render.com/mca_database")
-# }
-
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'MCA_DATABASE', 
-        'USER': 'postgres',
-        'PASSWORD': '9658',
-        'HOST': 'localhost',
-        'PORT': '5432'
-    }
-
+    'default': dj_database_url.parse("postgresql://mca_database_user:xE011QcbT43O8HX0i9735kh8ox6voEmq@dpg-ct3onoe8ii6s73d8c6b0-a.oregon-postgres.render.com/mca_database")
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'MCA_DATABASE', 
+#         'USER': 'postgres',
+#         'PASSWORD': '9658',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+
+# }
 
 
 # Password validation
