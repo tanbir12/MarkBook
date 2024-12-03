@@ -203,7 +203,7 @@ def add_marks_view(request, year, subject_id, teacher_id):
 
 
     else:
-        # Render empty formset with student information for the first GET request
+        
         formset = StudentMarksFormSet(initial=initial_data)
     
     return render(request, 'student/add_marks.html', {

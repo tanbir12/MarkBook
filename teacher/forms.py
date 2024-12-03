@@ -36,6 +36,6 @@ class addStudent_form(forms.ModelForm):
 
 
 class StudentMarksForm(forms.Form):
-    roll_no = forms.CharField(disabled=True)  # Hidden roll_no to link marks with student
-    student_name = forms.CharField(disabled=True, label="Student Name")  # Display name as non-editable
+    roll_no = forms.CharField(disabled=True)  
+    student_name = forms.CharField(disabled=True, label="Student Name")  
     marks_obtained = forms.IntegerField(label="Marks", required=True)

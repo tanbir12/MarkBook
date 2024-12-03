@@ -18,7 +18,6 @@ def indexPage(request):
         'no_of_teachers': no_of_teachers    
     }
 
-    # for checking and redirecting to the mark page.
     if(request.method=="POST"):
         roll_no = request.POST.get('keyword')
         student = Student.objects.filter(roll_no=roll_no)
@@ -37,7 +36,6 @@ def markPage(request,roll_no):
     student = Student.objects.get(roll_no = roll_no)
     for semester in Semester.objects.all().order_by('semester_number'):
         
-        # Here subject__semester gives all the subjects of the semester by relation in django.
         semester_marks = Marks.objects.filter(student=student,subject__semester = semester)
 
         if semester_marks.exists():
