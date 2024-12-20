@@ -773,6 +773,12 @@ nav#menu span.fa.fa-bars:hover {
   #content{
     padding: 20px 0px !important;
   }
+  .category-content li{
+    font-size: 11px !important;
+  }
+  .category-content li span{
+    font-size: 8px !important;
+  }
 }
 
 /* ==========================================================================
