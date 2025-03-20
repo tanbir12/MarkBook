@@ -72,22 +72,25 @@ WSGI_APPLICATION = 'MCA.wsgi.application'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# DATABASES = {
-#     'default': dj_database_url.parse("postgresql://mca_database_user:xE011QcbT43O8HX0i9735kh8ox6voEmq@dpg-ct3onoe8ii6s73d8c6b0-a.oregon-postgres.render.com/mca_database")
-# }
 
+# For This project NeonDB is used (Scimuphilelab Account google login)
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Markbook', 
-        'USER': 'postgres',
-        'PASSWORD': '9658',
-        'HOST': 'localhost',
-        'PORT': '5433'
-    }
-
+    'default': dj_database_url.parse("postgresql://neondb_owner:npg_cuT6aYFLk3oQ@ep-late-rice-a1u4khfe-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require")
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'Markbook', 
+#         'USER': 'postgres',
+#         'PASSWORD': '9658',
+#         'HOST': 'localhost',
+#         'PORT': '5433'
+#     }
+
+# }
 
 
 # Password validation
